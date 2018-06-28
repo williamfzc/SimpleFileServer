@@ -44,5 +44,5 @@ func main() {
 
 	http.HandleFunc("/", indexHandler)
 	http.Handle("/view/", http.StripPrefix("/view", http.FileServer(http.Dir(*fRootDir))))
-	http.ListenAndServe("127.0.0.1:" + *fPort, nil)
+	http.ListenAndServe("0.0.0.0:" + *fPort, nil)
 }
